@@ -1,0 +1,24 @@
+plugins {
+    id "java"
+    id "idea"
+}
+
+group "renanzambrin.learning.geneticalgorithm"
+version "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter:${junitVersion}"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
