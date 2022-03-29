@@ -1,3 +1,8 @@
+![Build](https://github.com/renanzambrin/learning-genetic-algorithm-cargo-haul/workflows/Build/badge.svg)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=renanzambrin_learning-genetic-algorithm-cargo-haul&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=renanzambrin_learning-genetic-algorithm-cargo-haul)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=renanzambrin_learning-genetic-algorithm-cargo-haul&metric=coverage)](https://sonarcloud.io/summary/new_code?id=renanzambrin_learning-genetic-algorithm-cargo-haul)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=renanzambrin_learning-genetic-algorithm-cargo-haul&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=renanzambrin_learning-genetic-algorithm-cargo-haul)
+
 # Learning Genetic Algorithms - Cargo Haul
 
 A logistic company hired you to haul some cargo. You can pick any package from their storage.

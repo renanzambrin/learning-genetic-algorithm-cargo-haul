@@ -1,6 +1,8 @@
 plugins {
     id "java"
     id "idea"
+    id "org.sonarqube" version "${sonarqubePluginVersion}"
+    id "jacoco"
 }
 
 group "renanzambrin.learning.geneticalgorithm"
@@ -16,9 +18,27 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+
+    reports {
+        xml.enabled(true)
+        html.enabled(true)
+    }
 }
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "renanzambrin_learning-genetic-algorithm-cargo-haul"
+        property "sonar.organization", "renanzambrin"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
 }
