@@ -35,10 +35,11 @@ public class Haul {
     }
 
     public void addBox(Box box) {
-        this.cargo.add(box);
-        this.weight = this.weight.add(box.weight());
-        this.volume = this.volume.add(box.getVolume());
-        this.cost = this.cost.add(box.cost());
+        if (this.cargo.add(box)) {
+            this.weight = this.weight.add(box.weight());
+            this.volume = this.volume.add(box.getVolume());
+            this.cost = this.cost.add(box.cost());
+        }
     }
 
 }

@@ -33,4 +33,17 @@ class HaulTest {
         Assertions.assertEquals(box.cost(), haul.getCost());
     }
 
+    @Test
+    @ExtendWith(BoxParameterResolver.class)
+    void givenBox_WhenAddedSameBoxTwoTimesCargo_ThenHaulCargoShouldBeOneAndAllValuesMatchTheBox(Box box) {
+        Haul haul = new Haul();
+        haul.addBox(box);
+        haul.addBox(box);
+        Assertions.assertFalse(haul.getCargo().isEmpty());
+        Assertions.assertEquals(1, haul.getCargo().size());
+        Assertions.assertEquals(box.getVolume(), haul.getVolume());
+        Assertions.assertEquals(box.weight(), haul.getWeight());
+        Assertions.assertEquals(box.cost(), haul.getCost());
+    }
+
 }

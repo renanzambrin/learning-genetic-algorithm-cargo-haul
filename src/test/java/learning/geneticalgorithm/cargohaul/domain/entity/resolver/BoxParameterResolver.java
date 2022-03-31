@@ -13,6 +13,7 @@ public class BoxParameterResolver implements ParameterResolver {
     private static final Random RANDOM = new Random();
     private static final int MAX_BOUND = 2;
     private static final BigDecimal MIN_BOUND = BigDecimal.valueOf(0.1);
+    public static final int DEFAULT_POSITION = 0;
 
     @Override
     public boolean supportsParameter(ParameterContext parameterContext,
@@ -23,7 +24,8 @@ public class BoxParameterResolver implements ParameterResolver {
     @Override
     public Box resolveParameter(ParameterContext parameterContext,
                                 ExtensionContext extensionContext) throws ParameterResolutionException {
-        return new Box(BigDecimal.valueOf(RANDOM.nextInt(MAX_BOUND)).add(MIN_BOUND),
+        return new Box(DEFAULT_POSITION,
+                BigDecimal.valueOf(RANDOM.nextInt(MAX_BOUND)).add(MIN_BOUND),
                 BigDecimal.valueOf(RANDOM.nextInt(MAX_BOUND)).add(MIN_BOUND),
                 BigDecimal.valueOf(RANDOM.nextInt(MAX_BOUND)).add(MIN_BOUND),
                 BigDecimal.valueOf(RANDOM.nextInt(MAX_BOUND)).add(MIN_BOUND),

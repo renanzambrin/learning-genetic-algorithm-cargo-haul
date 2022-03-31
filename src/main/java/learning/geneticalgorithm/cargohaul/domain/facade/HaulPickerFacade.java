@@ -1,19 +1,23 @@
 package learning.geneticalgorithm.cargohaul.domain.facade;
 
+import java.util.List;
 import learning.geneticalgorithm.cargohaul.domain.entity.Haul;
 import learning.geneticalgorithm.cargohaul.domain.entity.Van;
-import learning.geneticalgorithm.cargohaul.domain.repository.BoxRepository;
+import learning.geneticalgorithm.cargohaul.domain.service.PopulationService;
 
 public class HaulPickerFacade {
 
-    final BoxRepository boxRepository;
+    static final int POPULATION_SIZE = 10000;
 
-    public HaulPickerFacade(BoxRepository boxRepository) {
-        this.boxRepository = boxRepository;
+    final PopulationService populationService;
+
+    public HaulPickerFacade(PopulationService populationService) {
+        this.populationService = populationService;
     }
 
     public Haul pickHaulFor(Van van) {
-        return null;
+        List<Haul> population = populationService.generateFirstPopulation(POPULATION_SIZE);
+        return population.get(0);
     }
 
 }

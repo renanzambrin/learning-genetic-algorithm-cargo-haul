@@ -4,16 +4,20 @@ import java.math.BigDecimal;
 import java.util.Objects;
 import learning.geneticalgorithm.cargohaul.domain.exception.BoxHeightCanNotBeNullOrNegativeException;
 import learning.geneticalgorithm.cargohaul.domain.exception.BoxLengthCanNotBeNullOrNegativeException;
+import learning.geneticalgorithm.cargohaul.domain.exception.BoxPositionCanNotBeNullOrNegativeException;
 import learning.geneticalgorithm.cargohaul.domain.exception.BoxValueCanNotBeNullOrNegativeException;
 import learning.geneticalgorithm.cargohaul.domain.exception.BoxWeightCanNotBeNullOrNegativeException;
 import learning.geneticalgorithm.cargohaul.domain.exception.BoxWidthCanNotBeNullOrNegativeException;
 
 import static java.math.BigDecimal.ZERO;
 
-public record Box(BigDecimal width, BigDecimal height, BigDecimal length, BigDecimal weight, BigDecimal cost) {
+public record Box(Integer position, BigDecimal width, BigDecimal height, BigDecimal length, BigDecimal weight,
+                  BigDecimal cost) {
 
     public Box {
-        if (Objects.isNull(width) || Objects.requireNonNull(width).compareTo(ZERO) < 0) {
+        if (Objects.isNull(position) || position.compareTo(0) < 0) {
+            throw new BoxPositionCanNotBeNullOrNegativeException();
+        } else if (Objects.isNull(width) || width.compareTo(ZERO) < 0) {
             throw new BoxWidthCanNotBeNullOrNegativeException();
         } else if (Objects.isNull(height) || height.compareTo(ZERO) < 0) {
             throw new BoxHeightCanNotBeNullOrNegativeException();
