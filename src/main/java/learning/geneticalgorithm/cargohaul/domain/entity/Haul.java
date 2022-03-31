@@ -1,4 +1,4 @@
-package learning.geneticalgorithm.cargohaul.domain;
+package learning.geneticalgorithm.cargohaul.domain.entity;
 
 import java.math.BigDecimal;
 import java.util.HashSet;

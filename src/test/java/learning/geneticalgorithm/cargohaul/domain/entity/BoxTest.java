@@ -1,4 +1,4 @@
-package learning.geneticalgorithm.cargohaul.domain;
+package learning.geneticalgorithm.cargohaul.domain.entity;
 
 import java.math.BigDecimal;
 import learning.geneticalgorithm.cargohaul.domain.exception.BoxHeightCanNotBeNullOrNegativeException;
@@ -6,7 +6,7 @@ import learning.geneticalgorithm.cargohaul.domain.exception.BoxLengthCanNotBeNul
 import learning.geneticalgorithm.cargohaul.domain.exception.BoxValueCanNotBeNullOrNegativeException;
 import learning.geneticalgorithm.cargohaul.domain.exception.BoxWeightCanNotBeNullOrNegativeException;
 import learning.geneticalgorithm.cargohaul.domain.exception.BoxWidthCanNotBeNullOrNegativeException;
-import learning.geneticalgorithm.cargohaul.resolver.BoxParameterResolver;
+import learning.geneticalgorithm.cargohaul.domain.entity.resolver.BoxParameterResolver;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

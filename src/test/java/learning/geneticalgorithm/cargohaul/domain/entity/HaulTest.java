@@ -1,7 +1,7 @@
-package learning.geneticalgorithm.cargohaul.domain;
+package learning.geneticalgorithm.cargohaul.domain.entity;
 
 import java.math.BigDecimal;
-import learning.geneticalgorithm.cargohaul.resolver.BoxParameterResolver;
+import learning.geneticalgorithm.cargohaul.domain.entity.resolver.BoxParameterResolver;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

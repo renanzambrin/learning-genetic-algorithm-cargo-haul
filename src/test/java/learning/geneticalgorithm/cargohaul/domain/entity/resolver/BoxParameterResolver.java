@@ -1,8 +1,8 @@
-package learning.geneticalgorithm.cargohaul.resolver;
+package learning.geneticalgorithm.cargohaul.domain.entity.resolver;
 
 import java.math.BigDecimal;
 import java.util.Random;
-import learning.geneticalgorithm.cargohaul.domain.Box;
+import learning.geneticalgorithm.cargohaul.domain.entity.Box;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.api.extension.ParameterResolutionException;
