@@ -6,30 +6,28 @@ import learning.geneticalgorithm.cargohaul.domain.entity.Box;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.api.extension.ParameterResolutionException;
-import org.junit.jupiter.api.extension.ParameterResolver;
+import org.junit.jupiter.api.extension.support.TypeBasedParameterResolver;
 
-public class BoxParameterResolver implements ParameterResolver {
+public class BoxParameterResolver extends TypeBasedParameterResolver<Box> {
 
-    private static final Random RANDOM = new Random();
-    private static final int MAX_BOUND = 2;
-    private static final BigDecimal MIN_BOUND = BigDecimal.valueOf(0.1);
+    public static final Random RANDOM = new Random();
+    public static final int MAX_BOUND = 2;
+    public static final BigDecimal MIN_BOUND = BigDecimal.valueOf(0.1);
     public static final int DEFAULT_POSITION = 0;
-
-    @Override
-    public boolean supportsParameter(ParameterContext parameterContext,
-                                     ExtensionContext extensionContext) throws ParameterResolutionException {
-        return parameterContext.getParameter().getType().equals(Box.class);
-    }
 
     @Override
     public Box resolveParameter(ParameterContext parameterContext,
                                 ExtensionContext extensionContext) throws ParameterResolutionException {
-        return new Box(DEFAULT_POSITION,
-                BigDecimal.valueOf(RANDOM.nextInt(MAX_BOUND)).add(MIN_BOUND),
-                BigDecimal.valueOf(RANDOM.nextInt(MAX_BOUND)).add(MIN_BOUND),
-                BigDecimal.valueOf(RANDOM.nextInt(MAX_BOUND)).add(MIN_BOUND),
-                BigDecimal.valueOf(RANDOM.nextInt(MAX_BOUND)).add(MIN_BOUND),
-                BigDecimal.valueOf(RANDOM.nextInt(MAX_BOUND)).add(MIN_BOUND));
+        return generateBox(DEFAULT_POSITION);
+    }
+
+    public static Box generateBox(int position) {
+        return new Box(position,
+                BigDecimal.valueOf(RANDOM.nextDouble(MAX_BOUND)).add(MIN_BOUND),
+                BigDecimal.valueOf(RANDOM.nextDouble(MAX_BOUND)).add(MIN_BOUND),
+                BigDecimal.valueOf(RANDOM.nextDouble(MAX_BOUND)).add(MIN_BOUND),
+                BigDecimal.valueOf(RANDOM.nextDouble(MAX_BOUND)).add(MIN_BOUND),
+                BigDecimal.valueOf(RANDOM.nextDouble(MAX_BOUND)).add(MIN_BOUND));
     }
 
 }

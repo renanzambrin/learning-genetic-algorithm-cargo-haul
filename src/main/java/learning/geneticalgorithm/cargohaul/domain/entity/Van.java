@@ -23,4 +23,8 @@ public record Van(BigDecimal width, BigDecimal height, BigDecimal length, BigDec
         }
     }
 
+    public BigDecimal getVolume() {
+        return this.width().multiply(this.height()).multiply(this.length());
+    }
+
 }

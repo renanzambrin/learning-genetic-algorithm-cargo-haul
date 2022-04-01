@@ -2,8 +2,8 @@ package learning.geneticalgorithm.cargohaul.domain.repository;
 
 import java.util.List;
 import learning.geneticalgorithm.cargohaul.domain.entity.Box;
-import learning.geneticalgorithm.cargohaul.domain.exception.BoxCanNotBeNullException;
 import learning.geneticalgorithm.cargohaul.domain.entity.resolver.BoxParameterResolver;
+import learning.geneticalgorithm.cargohaul.domain.exception.BoxCanNotBeNullException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,7 +32,8 @@ public abstract class BoxRepositoryTest {
 
     @Test
     void givenNullParameter_WhenAddBoxIsCalled_ThenThrowException() {
-        Assertions.assertThrows(BoxCanNotBeNullException.class, () -> getBoxRepository().addBox(null));
+        BoxRepository boxRepository = getBoxRepository();
+        Assertions.assertThrows(BoxCanNotBeNullException.class, () -> boxRepository.addBox(null));
     }
 
     @Test

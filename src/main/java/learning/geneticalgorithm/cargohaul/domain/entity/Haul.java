@@ -4,12 +4,13 @@ import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Haul {
+public class Haul implements Measurable {
 
     private final Set<Box> cargo;
     private BigDecimal weight;
     private BigDecimal volume;
     private BigDecimal cost;
+    private BigDecimal fitness;
 
     public Haul() {
         this.cargo = new HashSet<>();
@@ -32,6 +33,16 @@ public class Haul {
 
     public BigDecimal getCost() {
         return this.cost;
+    }
+
+    @Override
+    public BigDecimal getFitness() {
+        return this.fitness;
+    }
+
+    @Override
+    public void setFitness(BigDecimal value) {
+        this.fitness = value;
     }
 
     public void addBox(Box box) {
