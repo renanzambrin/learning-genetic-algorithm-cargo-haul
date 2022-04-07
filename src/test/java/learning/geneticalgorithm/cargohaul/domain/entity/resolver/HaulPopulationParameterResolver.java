@@ -10,7 +10,7 @@ import org.junit.jupiter.api.extension.support.TypeBasedParameterResolver;
 
 public class HaulPopulationParameterResolver extends TypeBasedParameterResolver<List<Haul>> {
 
-    public static final int DEFAULT_SIZE = 10;
+    public static final int DEFAULT_SIZE = 40;
 
     @Override
     public List<Haul> resolveParameter(ParameterContext parameterContext,

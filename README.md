@@ -22,3 +22,10 @@ As the van owner, you want to receive the best payment possible, carrying the hi
 #### Considerations:
 
 Box width, height, length, weight and delivery cost can not be a null or negative values.
+
+## Running test scenarios
+
+The Scenario is only enabled when the property -DrunScenarios=true is added.
+
+``./gradlew test --tests "learning.geneticalgorithm.cargohaul.scenario.ScenarioOneTest" -DrunScenarios=true``
+

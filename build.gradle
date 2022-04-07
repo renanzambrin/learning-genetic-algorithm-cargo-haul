@@ -18,6 +18,9 @@ dependencies {
 }
 
 test {
+    options {
+        systemProperties(System.getProperties())
+    }
     useJUnitPlatform()
     finalizedBy jacocoTestReport
 }

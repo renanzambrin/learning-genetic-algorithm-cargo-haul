@@ -2,6 +2,7 @@ package learning.geneticalgorithm.cargohaul.domain.entity;
 
 import java.math.BigDecimal;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Haul implements Measurable {
@@ -51,6 +52,46 @@ public class Haul implements Measurable {
             this.volume = this.volume.add(box.getVolume());
             this.cost = this.cost.add(box.cost());
         }
+    }
+
+    public void addAllBoxes(List<Box> boxes) {
+        boxes.forEach(this::addBox);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Haul haul = (Haul) o;
+
+        if (!cargo.equals(haul.cargo)) {
+            return false;
+        }
+        if (!weight.equals(haul.weight)) {
+            return false;
+        }
+        if (!volume.equals(haul.volume)) {
+            return false;
+        }
+        if (!cost.equals(haul.cost)) {
+            return false;
+        }
+        return fitness.equals(haul.fitness);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = cargo.hashCode();
+        result = 31 * result + weight.hashCode();
+        result = 31 * result + volume.hashCode();
+        result = 31 * result + cost.hashCode();
+        result = 31 * result + fitness.hashCode();
+        return result;
     }
 
 }

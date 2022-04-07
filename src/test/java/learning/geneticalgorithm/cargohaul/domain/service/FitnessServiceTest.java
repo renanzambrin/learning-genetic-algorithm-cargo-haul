@@ -1,6 +1,5 @@
 package learning.geneticalgorithm.cargohaul.domain.service;
 
-import java.util.Comparator;
 import java.util.List;
 import learning.geneticalgorithm.cargohaul.domain.entity.Box;
 import learning.geneticalgorithm.cargohaul.domain.entity.Haul;

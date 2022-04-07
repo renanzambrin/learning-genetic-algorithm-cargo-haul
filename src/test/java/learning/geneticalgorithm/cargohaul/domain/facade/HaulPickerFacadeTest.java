@@ -14,7 +14,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
 
-class HaulPickerFacadeTest {
+class   HaulPickerFacadeTest {
 
     HaulPickerFacade haulPickerFacade;
     PopulationService populationService;
